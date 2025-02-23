@@ -22,36 +22,12 @@ app.use(express.json());
 //set up folder for static files
 app.use(express.static(path.join(__dirname, "public")));
 
-//set up app to use sessions
-app.use(
-  sessions({
-    secret: process.env.SESSIONSECRET,
-    name: "MyUniqueSessID",
-    saveUninitialized: false,
-    resave: false,
-    cookie: {}
-  })
-);
 
 //USE PAGE ROUTES FROM ROUTER(S)
 app.use("/", require("./components/Home/routes"));
 app.use("/admin/project", require("./components/Project/routes"));
 app.use("/admin/skill", require("./components/Skill/routes"));
-/* 
-app.get("/add", async (request, response) => {
-  //add a pet
-  await db.addPet("Max", "dog", "Great Dane", 7)
-  response.redirect("/");
-});
-app.get("/update", async (request, response) => {
-  //update something
-  await db.updatePetName("Max", "Maximillian")
-  response.redirect("/");
-});
-app.get("/delete", async (request, response) => {
-  await db.deletePetByName("Fred");
-  response.redirect("/");
-}) */
+
 
 //set up server listening
 app.listen(port, () => {

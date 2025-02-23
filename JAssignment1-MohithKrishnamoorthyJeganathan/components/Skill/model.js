@@ -8,8 +8,8 @@ const SkillSchema = new mongoose.Schema({
   proficiencyLevel: String,
   yearsOfExperience: Number,
   name: String,
-  certification: Number
-}); 
+  certification: Number,
+});
 
 const Skill = mongoose.model("Skill", SkillSchema);
 
@@ -25,19 +25,33 @@ async function getSkills() {
 async function initializeSkills() {
   const skillList = [
     {
-        category: "Frontend",
-  proficiencyLevel: "Intermediate",
-  yearsOfExperience: 2,
-  name: "HTML",
-  certification: 1
+      category: "Frontend Development",
+      proficiencyLevel: "Intermediate",
+      yearsOfExperience: 1,
+      name: "HTML",
+      certification: 1,
     },
     {
-        category: "Programming",
-        proficiencyLevel: "Intermediate",
-        yearsOfExperience: 1,
-        name: "C#",
-        certification: 1
-    }
+      category: "Frontend Development",
+      proficiencyLevel: "Intermediate",
+      yearsOfExperience: 1,
+      name: "CSS",
+      certification: 0,
+    },
+    {
+      category: "Programming",
+      proficiencyLevel: "Intermediate",
+      yearsOfExperience: 2,
+      name: "JS",
+      certification: 2,
+    },
+    {
+      category: "Programming",
+      proficiencyLevel: "Intermediate",
+      yearsOfExperience: 1,
+      name: "C#",
+      certification: 0,
+    },
   ];
   await Skill.insertMany(skillList);
 }
@@ -46,13 +60,13 @@ async function initializeSkills() {
 async function addSkill(skill) {
   await db.connect();
   let newSkill = new Skill({
-        category: skill.category,
-        proficiencyLevel: skill.proficiencyLevel,
-        yearsOfExperience: skill.yearsOfExperience,
-        name: skill.name,
-        certification: skill.certification
+    category: skill.category,
+    proficiencyLevel: skill.proficiencyLevel,
+    yearsOfExperience: skill.yearsOfExperience,
+    name: skill.name,
+    certification: skill.certification,
   });
-  
+
   let result = await newSkill.save(); //save to the DB collection
   console.log(result);
 }
@@ -70,13 +84,13 @@ async function updateSkill(skillId, updatedSkill) {
   await db.connect();
   let result = await Skill.updateOne(
     { _id: skillId },
-    { 
-        category: updatedSkill.category,
-        proficiencyLevel: updatedSkill.proficiencyLevel,
-        yearsOfExperience: updatedSkill.yearsOfExperience,
-        name: updatedSkill.name,
-        certification: updatedSkill.certification
-     }
+    {
+      category: updatedSkill.category,
+      proficiencyLevel: updatedSkill.proficiencyLevel,
+      yearsOfExperience: updatedSkill.yearsOfExperience,
+      name: updatedSkill.name,
+      certification: updatedSkill.certification,
+    }
   );
 }
 
@@ -93,5 +107,5 @@ module.exports = {
   addSkill,
   getSingleSkill,
   updateSkill,
-  deleteSkillById
-}
+  deleteSkillById,
+};

@@ -38,7 +38,14 @@ async function initializeProjects() {
         technology: "JavaScript",
         githubRepo: "https://github.com/MohithJegan/abroad-compass-app",
         duration: "2 months"
-    }
+    },
+    {
+      title: "Movie Management System",
+      description: "The application allows to manage Movies, Studios, and Actors via an API and displays data on specific pages.",
+      technology: "C# Programming",
+      githubRepo: "https://github.com/MohithJegan/Movie-Management-System",
+      duration: "2 months"
+  },
   ];
   await Project.insertMany(projectList);
 }
