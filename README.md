@@ -43,9 +43,11 @@ GET    `/admin/skill/delete`  - Delete a skill
 - **`skill-add.pug`** – Form to add a new skill.
 - **`skill-edit.pug`** – Form to edit an existing skill.
 
-##  Deployment URL
-https://http5222-assignment-1-1.onrender.com
 ### **Project Views**
 - **`project-list.pug`** – Displays all projects.
 - **`project-add.pug`** – Form to add a new project.
 - **`project-edit.pug`** – Form to edit an existing project.
+
+
+##  Deployment URL
+[http5222-assignment-1](https://http5222-assignment-1-1.onrender.com)
