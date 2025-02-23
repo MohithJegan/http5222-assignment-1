@@ -19,17 +19,17 @@ The **routes.js** files define RESTful routes for handling CRUD operations.
 ### **Project Routes (`/components/Project/routes.js`)**
 GET    `/admin/project`        - Fetch all projects  
 GET    `/admin/project/add`    - Show form to add a new project  
-POST   `/admin/project/add`    - Add a new project  
+POST   `/admin/project/add/submit`    - Add a new project  
 GET    `/admin/project/edit`   - Show form to edit a project  
-POST   `/admin/project/edit`   - Update an existing project  
+POST   `/admin/project/edit/submit`   - Update an existing project  
 GET    `/admin/project/delete` - Delete a project  
 
 ### **Skill Routes (`/components/Skill/routes.js`)**
 GET    `/admin/skill`         - Fetch all skills  
 GET    `/admin/skill/add`     - Show form to add a new skill  
-POST   `/admin/skill/add`     - Add a new skill  
+POST   `/admin/skill/add/submit`     - Add a new skill  
 GET    `/admin/skill/edit`    - Show form to edit a skill  
-POST   `/admin/skill/edit`    - Update an existing skill  
+POST   `/admin/skill/edit/submit`    - Update an existing skill  
 GET    `/admin/skill/delete`  - Delete a skill  
 
 ## Views (Pug Templates)
