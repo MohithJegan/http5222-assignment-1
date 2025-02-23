@@ -1,0 +1,42 @@
+//- Page with form to edit skill to skills collection
+//- /admin/skill/edit
+
+extends ../layout
+
+block layout-content
+  .container
+    .card.shadow-sm.p-4
+      h1.text-center.mb-4 Edit Skill
+      form(method="post", action="/admin/skill/edit/submit")
+        input(type="hidden", name="skillId", value=editSkill._id)
+        .row.g-3
+          .col-12.col-md-6
+            label.form-label(for="name") Skill Name:
+            input.form-control(type="text", id="name", name="name", placeholder="Enter skill name", value=editSkill.name, required)
+          .col-12.col-md-6
+            label.form-label(for="category") Category :
+            select.form-select(id="category", name="category", required)
+              option(value="Programming", selected=editSkill.category=='Programming') Programming
+              option(value="Frontend Development", selected=editSkill.category=='Frontend Development') Frontend Development
+              option(value="Backend Development", selected=editSkill.category=='Backend Development') Backend Development
+              option(value="Databases", selected=editSkill.category=='Databases') Databases
+              option(value="DevOps & Cloud Computing", selected=editSkill.category=='DevOps & Cloud Computing') DevOps & Cloud Computing
+              option(value="UI/UX & Design Tools", selected=editSkill.category=='UI/UX & Design Tools') UI/UX & Design Tools
+              option(value="Other", selected=editSkill.category=='Other') Other
+          .col-12.col-md-6
+            label.form-label(for="proficiencyLevel") Proficiency Level:
+            select.form-select(id="proficiencyLevel", name="proficiencyLevel", required)
+              option(value="Beginner", selected=editSkill.proficiencyLevel=='Beginner') Beginner
+              option(value="Intermediate", selected=editSkill.proficiencyLevel=='Intermediate') Intermediate
+              option(value="Advanced", selected=editSkill.proficiencyLevel=='Advanced') Advanced
+              option(value="Expert", selected=editSkill.proficiencyLevel=='Expert') Expert
+          .col-12.col-md-6
+            label.form-label(for="yearsOfExperience") Experience (Years):
+            input.form-control(type="number", id="yearsOfExperience", name="yearsOfExperience", placeholder="Enter years of experience", value=editSkill.yearsOfExperience, min="0", required)
+          .col-12
+            label.form-label(for="certification") Certification:
+            input.form-control(type="number", id="certification", name="certification", placeholder="Enter number of certifications", value=editSkill.certification, required)
+        .d-grid.d-md-flex.justify-content-md-end.mt-3
+          button.btn.btn-success(type="submit")
+            i.bi.bi-pencil-square.me-2
+            | Update Skill

@@ -1,0 +1,39 @@
+//- Main admin page for skill (/admin/skill)
+extends ../layout 
+
+block layout-content 
+  .container.m-3.m-md-5
+    .d-flex.justify-content-between.align-items-center.mb-4
+      h1 Skill Section 
+      a.btn.btn-primary(href="/admin/skill/add")
+        i.bi.bi-plus-circle.me-1
+        | Add Skill
+    
+    .row.g-4
+      each skill in skills
+        .col-12.col-sm-6.col-lg-4
+          .card.shadow-sm.p-3.bg-light.h-100
+            .card-body
+              h5.card-title.fw-bold
+                i.bi.bi-lightbulb-fill.text-warning.me-2
+                | #{skill.name} (#{skill.category})
+              p.card-text
+                i.bi.bi-clock-history.me-1
+                | Experience: #{skill.yearsOfExperience} years
+              p.card-text
+                i.bi.bi-award.me-1
+                | Certification: #{skill.certification}
+              p.card-text
+                i.bi.bi-bar-chart-line.me-1
+                | Proficiency: #{skill.proficiencyLevel}
+              .d-flex.justify-content-between.mt-3
+                form(action="/admin/skill/edit")
+                  input(type="hidden", name="skillId", value=skill._id)
+                  button.btn.btn-outline-primary(type="submit")
+                    i.bi.bi-pencil-square.me-1
+                    | Edit
+                form(action="/admin/skill/delete")
+                  input(type="hidden", name="skillId", value=skill._id)
+                  button.btn.btn-outline-danger(type="submit")
+                    i.bi.bi-trash.me-1
+                    | Delete

@@ -1,0 +1,38 @@
+extends layout
+
+block layout-content
+  .text-center
+    h1.fw-bold Welcome to My Portfolio
+    p.lead.fs-4 A showcase of my skills, experience, and projects as a passionate web developer.
+
+  // About Me Section
+  .row.mt-5.align-items-stretch.g-4
+    .col-12.col-md-6.order-2.order-md-1
+      .h-100.p-4.border.rounded.shadow-lg.bg-light
+        h2.fw-bold About Me
+        p.fs-5 I’m a passionate Front-end Developer based in Toronto. With a love for IT Industry, I specialize in Web Development, and I strive to create work that not only meets but exceeds expectations.
+        p.fs-5 My expertise lies in creating efficient, scalable solutions that enhance user experience and functionality.
+    .col-12.col-md-6.order-1.order-md-2.text-center
+      .h-100.d-flex.align-items-center.justify-content-center
+        img.img-fluid.rounded-circle.shadow-lg(src="/images/profile.png" alt="This is a profile image" width="250" style="max-width: 100%; height: auto;")
+
+  // Skills, Projects, and Contact Sections
+  div.row.mt-5.text-center.g-4
+    div#skill-block.col-12.col-md-4
+      .h-100.p-4.border.rounded.shadow-lg.bg-light
+        i.bi.bi-code-slash.display-3.text-primary
+        h3.fw-bold.mt-3 Skills
+        p.fs-5 Explore my technical expertise across various programming languages and frameworks.
+        a.btn.btn-outline-primary.mt-2(href="/admin/skill") View Skills
+    div#project-block.col-12.col-md-4
+      .h-100.p-4.border.rounded.shadow-lg.bg-light
+        i.bi.bi-folder-fill.display-3.text-primary
+        h3.fw-bold.mt-3 Projects
+        p.fs-5 Check out my work, including real-world applications and personal projects.
+        a.btn.btn-outline-primary.mt-2(href="/admin/project") View Projects
+    div#contact-block.col-12.col-md-4
+      .h-100.p-4.border.rounded.shadow-lg.bg-light
+        i.bi.bi-envelope.display-3.text-primary
+        h3.fw-bold.mt-3 Contact
+        p.fs-5 Get in touch with me for collaborations, job opportunities, or inquiries.
+        a.btn.btn-outline-primary.mt-2(href="/contact") Contact Me

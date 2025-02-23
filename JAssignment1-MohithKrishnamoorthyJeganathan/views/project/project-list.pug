@@ -1,0 +1,33 @@
+//- Main admin page for project (/admin/project)
+extends ../layout
+
+block layout-content
+  .container
+    .d-flex.justify-content-between.align-items-center.mb-4
+      h1 Project Section
+      a.btn.btn-primary(href="/admin/project/add")
+        i.bi.bi-plus-circle.me-2
+        | Add Project
+    .row
+      each project in projects
+        .col-12.col-md-6.col-lg-4.mb-4
+          .card.shadow-sm
+            .card-body.d-flex.flex-column.align-items-center
+              h5.card-title #{project.title}
+              p.text-muted Duration: #{project.duration}
+              p.text-muted Technology: #{project.technology}
+              p.card-text #{project.description}
+              a.btn.btn-outline-dark.mt-2(href=project.githubRepo target="_blank")
+                i.bi.bi-github.me-1
+                | View Repo
+            .card-footer.d-flex.justify-content-between
+              form(action="/admin/project/delete")
+                input(type="hidden", name="projectId", value=project._id)
+                button.btn.btn-danger(type="submit")
+                  i.bi.bi-trash
+                  | Delete
+              form(action="/admin/project/edit")
+                input(type="hidden", name="projectId", value=project._id)
+                button.btn.btn-warning(type="submit")
+                  i.bi.bi-pencil-square
+                  | Edit

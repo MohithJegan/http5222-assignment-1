@@ -1,0 +1,28 @@
+//- Page with form to edit project to projects collection
+//- /admin/project/edit
+
+extends ../layout
+
+block layout-content
+  .container
+    .card.shadow-sm.p-4
+      h1.page-title.text-center.mb-4 Edit Project
+      form(method="post", action="/admin/project/edit/submit")
+        input(type="hidden", name="projectId", value=editProject._id)
+        .mb-3
+          label.form-label(for="title") Project Title:
+          input.form-control(type="text", id="title", name="title", value=editProject.title)
+        .mb-3
+          label.form-label(for="technology") Technology:
+          input.form-control(type="text", id="technology", name="technology", value=editProject.technology)
+        .mb-3
+          label.form-label(for="description") Description:
+          input.form-control(type="text", id="description", name="description", value=editProject.description)
+        .mb-3
+          label.form-label(for="githubRepo") GitHub Repo:
+          input.form-control(type="text", id="githubRepo", name="githubRepo", value=editProject.githubRepo)
+        .mb-3
+          label.form-label(for="duration") Duration:
+          input.form-control(type="text", id="duration", name="duration", value=editProject.duration)
+        .text-center
+          button.btn.btn-primary(type="submit") Update Project

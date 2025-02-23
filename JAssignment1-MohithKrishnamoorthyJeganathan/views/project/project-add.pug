@@ -1,0 +1,27 @@
+//- Page with form to add new project to projects collection
+//- /admin/project/add
+
+extends ../layout
+
+block layout-content
+  .container
+    .d-flex.justify-content-between.align-items-center.mb-4
+      h1 Add User Project
+    .card.shadow-sm.p-4
+      form(method="post", action="/admin/project/add/submit")
+        .mb-3
+          label.form-label(for="title") Project Title: 
+          input.form-control(type="text", id="title", name="title", placeholder="Weather App")
+        .mb-3
+          label.form-label(for="description") Description: 
+          input.form-control(type="text", id="description", name="description", placeholder="It shows the details of the weather")
+        .mb-3
+          label.form-label(for="technology") Technology: 
+          input.form-control(type="text", id="technology", name="technology", placeholder="JavaScript")
+        .mb-3
+          label.form-label(for="githubRepo") GitHub Repo: 
+          input.form-control(type="text", id="githubRepo", name="githubRepo", placeholder="Url")
+        .mb-3
+          label.form-label(for="duration") Duration: 
+          input.form-control(type="text", id="duration", name="duration", placeholder="3 Months")
+        button.btn.btn-primary.d-block.m-auto(type="submit") Add Project

@@ -1,0 +1,24 @@
+body {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    margin-bottom: 20px;
+  }
+
+.col-md-4{
+    width: 32%;
+}
+
+/* footer{
+    position: fixed;
+    bottom: 0;
+} */
+
+
+@media (min-width: 360px) and (max-width: 767px){
+  #skill-block, #project-block, #contact-block{
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+//- Page with form to add new skill to skills collection
+//- /admin/skill/add
+extends ../layout 
+
+block layout-content 
+  .container.m-3.m-md-5
+    .card.shadow-sm.p-3.p-md-4
+      h1.text-center.mb-4 Add Skill
+      form(method="post", action="/admin/skill/add/submit")
+        .row.g-3
+          .col-12.col-md-6
+            label.form-label(for="name") Skill Name:
+            input.form-control(type="text", id="name", name="name", placeholder="JavaScript", required)
+          .col-12.col-md-6
+            label.form-label(for="category") Category:
+            select.form-select(id="category", name="category", required)
+              option(value="") Select Category 
+              option(value="Programming") Programming
+              option(value="Frontend Development") Frontend Development
+              option(value="Backend Development") Backend Development
+              option(value="Databases") Databases
+              option(value="DevOps & Cloud Computing") DevOps & Cloud Computing
+              option(value="UI/UX & Design Tools") UI/UX & Design Tools
+              option(value="Other") Other
+          .col-12.col-md-6
+            label.form-label(for="proficiencyLevel") Proficiency Level:
+            select.form-select(id="proficiencyLevel", name="proficiencyLevel", required)
+              option(value="") Select Proficiency Level
+              option(value="Beginner") Beginner
+              option(value="Intermediate") Intermediate
+              option(value="Advanced") Advanced
+              option(value="Expert") Expert
+          .col-12.col-md-6
+            label.form-label(for="yearsOfExperience") Experience (Years):
+            input.form-control(type="number", id="yearsOfExperience", name="yearsOfExperience", placeholder="Enter years of experience", min="0", required)
+          .col-12
+            label.form-label(for="certification") Number of Certification:
+            input.form-control(type="number", id="certification", name="certification", placeholder="Enter number of certifications", required)
+        .d-grid.d-md-flex.justify-content-md-end.mt-3
+          button.btn.btn-primary.d-block.mx-auto(type="submit")
+            i.bi.bi-plus-circle.me-2
+            | Add Skill
