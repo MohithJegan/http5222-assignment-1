@@ -10,5 +10,5 @@ router.post("/add/submit", addProject);
 router.get("/edit", getEditProjectForm);
 router.post("/edit/submit", editProject);
 router.get("/delete", deleteProject)
-
+router.get("/api/project")
 module.exports = router;

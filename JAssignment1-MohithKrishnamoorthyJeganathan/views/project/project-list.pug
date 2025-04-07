@@ -12,11 +12,12 @@ block layout-content
       each project in projects
         .col-12.col-md-6.col-lg-4.mb-4
           .card.shadow-sm
+            img.card-img-top.img-fluid.mb-3(src=project.image, alt=`${project.title}`)
             .card-body.d-flex.flex-column.align-items-center
-              h5.card-title #{project.title}
+              h5.card-title.text-center #{project.title}
               p.text-muted Duration: #{project.duration}
               p.text-muted Technology: #{project.technology}
-              p.card-text #{project.description}
+              p.card-text.text-center #{project.description}
               a.btn.btn-outline-dark.mt-2(href=project.githubRepo target="_blank")
                 i.bi.bi-github.me-1
                 | View Repo

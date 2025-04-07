@@ -8,7 +8,8 @@ const ProjectSchema = new mongoose.Schema({
   description: String,
   technology: String,
   githubRepo: String,
-  duration: String
+  duration: String,
+  image:String
 }); 
 
 const Project = mongoose.model("Project", ProjectSchema);
@@ -30,21 +31,25 @@ async function initializeProjects() {
         description: "The application allows to manage Teachers, Students, and Courses via an API and displays data on specific pages.",
         technology: "C# Programming",
         githubRepo: "https://github.com/MohithJegan/Http-5125-Cumulative-1",
-        duration: "3 months"
+        duration: "3 months",
+        image: "/images/schooldatabase.png"
+
     },
     {
         title: "Abroad Compass",
         description: "This app provides country-specific seasonal clothing and food recommendations based on user-selected country and season.",
         technology: "JavaScript",
         githubRepo: "https://github.com/MohithJegan/abroad-compass-app",
-        duration: "2 months"
+        duration: "2 months",
+        image: "/images/Compass.png"
     },
     {
       title: "Movie Management System",
       description: "The application allows to manage Movies, Studios, and Actors via an API and displays data on specific pages.",
       technology: "C# Programming",
       githubRepo: "https://github.com/MohithJegan/Movie-Management-System",
-      duration: "2 months"
+      duration: "2 months",
+      image: "/images/Movie-Management.png"
   },
   ];
   await Project.insertMany(projectList);
